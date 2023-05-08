@@ -5,6 +5,15 @@ import 'package:facebook/sections/statusSection.dart';
 import 'package:facebook/sections/roomSection.dart';
 
 class Home extends StatelessWidget {
+  Widget thinDivider = Divider(
+    thickness: 1,
+    color: Colors.grey[300],
+  );
+  Widget thickDivider = Divider(
+    thickness: 10,
+    color: Colors.grey[300],
+  );
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -38,16 +47,11 @@ class Home extends StatelessWidget {
         body: ListView(
           children: [
             StatusSection(),
-            Divider(
-              thickness: 1,
-              color: Colors.grey[300],
-            ),
+            thinDivider,
             HeaderButtonSection(),
-            Divider(
-              thickness: 10,
-              color: Colors.grey[300],
-            ),
+            thickDivider,
             RoomSection(),
+            thickDivider,
           ],
         ),
       ),

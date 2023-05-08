@@ -1,4 +1,4 @@
-String nivin = "assets/avatar.nivin.jpeg";
+String nivin = "assets/avatar/nivin.jpeg";
 String mohanlal = "assets/avatar/mohanlal.jpeg";
 String mammutty = "assets/avatar/mammutty.jpeg";
 String tovino = "assets/avatar/tovino.jpeg";
