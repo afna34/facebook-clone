@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 
 class Avatar extends StatelessWidget {
   String displayImage;
+  bool displayStatus;
 
-  Avatar({required this.displayImage});
+  Avatar({required this.displayImage, required this.displayStatus});
 
   @override
   Widget build(BuildContext context) {
+    //Widget statusIndicator;
+
     return Stack(
       children: [
         Container(
@@ -20,19 +23,21 @@ class Avatar extends StatelessWidget {
             ),
           ),
         ),
-        Positioned(
-          bottom: 0,
-          right: 1.0,
-          child: Container(
-            height: 15,
-            width: 15,
-            decoration: BoxDecoration(
-              color: Colors.greenAccent,
-              shape: BoxShape.circle,
-              border: Border.all(color: Colors.white, width: 2),
-            ),
-          ),
-        ),
+        displayStatus == true
+            ? Positioned(
+                bottom: 0,
+                right: 1.0,
+                child: Container(
+                  height: 15,
+                  width: 15,
+                  decoration: BoxDecoration(
+                    color: Colors.greenAccent,
+                    shape: BoxShape.circle,
+                    border: Border.all(color: Colors.white, width: 2),
+                  ),
+                ),
+              )
+            : SizedBox(),
       ],
     );
   }

@@ -14,16 +14,46 @@ class RoomSection extends StatelessWidget {
         padding: EdgeInsets.all(10),
         children: [
           createRoomButton(),
-          Avatar(displayImage: raj),
-          Avatar(displayImage: mammutty),
-          Avatar(displayImage: mohanlal),
-          Avatar(displayImage: actor),
-          Avatar(displayImage: tovino),
-          Avatar(displayImage: nivin),
-          Avatar(displayImage: mammutty),
-          Avatar(displayImage: mohanlal),
-          Avatar(displayImage: actor),
-          Avatar(displayImage: tovino),
+          Avatar(
+            displayImage: raj,
+            displayStatus: true,
+          ),
+          Avatar(
+            displayImage: mammutty,
+            displayStatus: true,
+          ),
+          Avatar(
+            displayImage: mohanlal,
+            displayStatus: true,
+          ),
+          Avatar(
+            displayImage: actor,
+            displayStatus: true,
+          ),
+          Avatar(
+            displayImage: tovino,
+            displayStatus: true,
+          ),
+          Avatar(
+            displayImage: nivin,
+            displayStatus: true,
+          ),
+          Avatar(
+            displayImage: mammutty,
+            displayStatus: true,
+          ),
+          Avatar(
+            displayImage: mohanlal,
+            displayStatus: true,
+          ),
+          Avatar(
+            displayImage: actor,
+            displayStatus: true,
+          ),
+          Avatar(
+            displayImage: tovino,
+            displayStatus: true,
+          ),
         ],
       ),
     );
