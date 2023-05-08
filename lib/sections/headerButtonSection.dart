@@ -17,6 +17,13 @@ class HeaderButtonSection extends StatelessWidget {
     );
   }
 
+  Widget verticalDivider() {
+    return VerticalDivider(
+      thickness: 1,
+      color: Colors.grey[300],
+    );
+  }
+
   const HeaderButtonSection({super.key});
 
   @override
@@ -32,10 +39,7 @@ class HeaderButtonSection extends StatelessWidget {
           buttonColor: Colors.red,
           buttonIcon: Icons.video_call,
         ),
-        VerticalDivider(
-          thickness: 1,
-          color: Colors.grey[300],
-        ),
+        verticalDivider(),
         headerButton(
           buttonText: "Photo",
           buttonAction: () {
@@ -44,10 +48,7 @@ class HeaderButtonSection extends StatelessWidget {
           buttonColor: Colors.green,
           buttonIcon: Icons.photo,
         ),
-        VerticalDivider(
-          thickness: 1,
-          color: Colors.grey[300],
-        ),
+        verticalDivider(),
         headerButton(
           buttonText: "Room",
           buttonAction: () {
