@@ -1,5 +1,6 @@
 import 'package:facebook/widgets/appBarButton.dart';
 import 'package:flutter/material.dart';
+import 'package:facebook/sections/statusSection.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -30,6 +31,11 @@ class Home extends StatelessWidget {
                 print('go to message icon');
               },
             )
+          ],
+        ),
+        body: ListView(
+          children: [
+            StatusSection(),
           ],
         ),
       ),
