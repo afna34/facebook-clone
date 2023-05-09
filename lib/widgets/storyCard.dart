@@ -1,16 +1,29 @@
+import 'package:facebook/widgets/Avatar.dart';
 import 'package:facebook/widgets/circularButton.dart';
 import 'package:facebook/widgets/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:facebook/widgets/assets.dart';
 
 class StoryCard extends StatelessWidget {
-  const StoryCard({super.key});
+  bool displayBorder;
+  String cardText;
+  String story;
+  String profilePic;
+  bool createStoryStatus;
+
+  StoryCard({
+    required this.profilePic,
+    required this.cardText,
+    required this.story,
+    this.createStoryStatus = false,
+    this.displayBorder = false,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage(raj), fit: BoxFit.cover),
+        image: DecorationImage(image: AssetImage(story), fit: BoxFit.cover),
         borderRadius: BorderRadius.circular(15),
       ),
       width: 150,
@@ -25,19 +38,25 @@ class StoryCard extends StatelessWidget {
           Positioned(
             left: 5,
             top: 5,
-            child: CircularButton(
-              buttonIcon: Icons.add,
-              circularbuttonIconColor: Colors.lightBlue,
-              buttonAction: () {
-                print('add story');
-              },
-            ),
+            child: createStoryStatus
+                ? CircularButton(
+                    buttonIcon: Icons.add,
+                    circularbuttonIconColor: Colors.lightBlue,
+                    buttonAction: () {
+                      print('add story');
+                    },
+                  )
+                : Avatar(
+                    displayImage: profilePic,
+                    displayStatus: false,
+                    displayBorder: displayBorder,
+                  ),
           ),
           Positioned(
             left: 10,
             bottom: 10,
             child: Text(
-              'Add to story',
+              cardText != null ? cardText : "N/A",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 16,
