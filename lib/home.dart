@@ -1,6 +1,9 @@
 import 'package:facebook/sections/headerButtonSection.dart';
 import 'package:facebook/sections/storySection.dart';
+import 'package:facebook/widgets/assets.dart';
+import 'package:facebook/widgets/blueTick.dart';
 import 'package:facebook/widgets/circularButton.dart';
+import 'package:facebook/widgets/postCard.dart';
 import 'package:facebook/widgets/storyCard.dart';
 import 'package:flutter/material.dart';
 import 'package:facebook/sections/statusSection.dart';
@@ -57,6 +60,12 @@ class Home extends StatelessWidget {
             RoomSection(),
             thickDivider,
             StorySection(),
+            thickDivider,
+            PostCard(
+              personName: "Mohanlal",
+              avatar: mohanlal,
+              PostTime: "6h",
+            ),
           ],
         ),
       ),
