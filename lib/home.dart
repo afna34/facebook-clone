@@ -1,5 +1,7 @@
 import 'package:facebook/sections/headerButtonSection.dart';
-import 'package:facebook/widgets/appBarButton.dart';
+import 'package:facebook/sections/storySection.dart';
+import 'package:facebook/widgets/circularButton.dart';
+import 'package:facebook/widgets/storyCard.dart';
 import 'package:flutter/material.dart';
 import 'package:facebook/sections/statusSection.dart';
 import 'package:facebook/sections/roomSection.dart';
@@ -30,14 +32,16 @@ class Home extends StatelessWidget {
             ),
           ),
           actions: [
-            AppBarButton(
+            CircularButton(
               buttonIcon: Icons.search,
+              circularbuttonIconColor: Colors.black,
               buttonAction: () {
                 print('go to button icon');
               },
             ),
-            AppBarButton(
+            CircularButton(
               buttonIcon: Icons.message,
+              circularbuttonIconColor: Colors.black,
               buttonAction: () {
                 print('go to message icon');
               },
@@ -52,6 +56,7 @@ class Home extends StatelessWidget {
             thickDivider,
             RoomSection(),
             thickDivider,
+            StorySection(),
           ],
         ),
       ),

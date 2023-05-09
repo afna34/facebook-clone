@@ -23,7 +23,11 @@ class Avatar extends StatelessWidget {
             ),
           ),
         ),
-        displayStatus == true
+
+        //it's used insteda of if else..we use displyStatus == condition ? true part : else part
+        //displyStatus ? true : false
+
+        displayStatus
             ? Positioned(
                 bottom: 0,
                 right: 1.0,
