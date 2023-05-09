@@ -64,7 +64,10 @@ class Home extends StatelessWidget {
             PostCard(
               personName: "Mohanlal",
               avatar: mohanlal,
-              PostTime: "6h",
+              postTime: "6h",
+              postHeading: "First look",
+              postImage: story5,
+              showblueTick: true,
             ),
           ],
         ),
