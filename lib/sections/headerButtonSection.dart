@@ -1,21 +1,15 @@
 import 'package:flutter/material.dart';
 
 class HeaderButtonSection extends StatelessWidget {
-  Widget headerButton({
-    required String buttonText,
-    required IconData buttonIcon,
-    required void Function() buttonAction,
-    required Color buttonColor,
-  }) {
-    return TextButton.icon(
-      label: Text(buttonText),
-      onPressed: buttonAction,
-      icon: Icon(
-        buttonIcon,
-        color: buttonColor,
-      ),
-    );
-  }
+  final Widget buttonOne;
+  final Widget buttonTwo;
+  final Widget buttonThree;
+
+  HeaderButtonSection({
+    required this.buttonOne,
+    required this.buttonTwo,
+    required this.buttonThree,
+  });
 
   Widget verticalDivider() {
     return VerticalDivider(
@@ -24,39 +18,16 @@ class HeaderButtonSection extends StatelessWidget {
     );
   }
 
-  const HeaderButtonSection({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 40,
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-        headerButton(
-          buttonText: "Live",
-          buttonAction: () {
-            print('Go live');
-          },
-          buttonColor: Colors.red,
-          buttonIcon: Icons.video_call,
-        ),
+        buttonOne,
         verticalDivider(),
-        headerButton(
-          buttonText: "Photo",
-          buttonAction: () {
-            print('open photos');
-          },
-          buttonColor: Colors.green,
-          buttonIcon: Icons.photo,
-        ),
+        buttonTwo,
         verticalDivider(),
-        headerButton(
-          buttonText: "Room",
-          buttonAction: () {
-            print('create a room');
-          },
-          buttonColor: Colors.purple,
-          buttonIcon: Icons.video_call,
-        ),
+        buttonThree,
       ]),
     );
   }

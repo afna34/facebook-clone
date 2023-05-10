@@ -50,6 +50,8 @@ class StoryCard extends StatelessWidget {
                     displayImage: profilePic,
                     displayStatus: false,
                     displayBorder: displayBorder,
+                    height: 35,
+                    width: 35,
                   ),
           ),
           Positioned(

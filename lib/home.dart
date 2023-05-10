@@ -3,6 +3,7 @@ import 'package:facebook/sections/storySection.dart';
 import 'package:facebook/widgets/assets.dart';
 import 'package:facebook/widgets/blueTick.dart';
 import 'package:facebook/widgets/circularButton.dart';
+import 'package:facebook/widgets/headerButton.dart';
 import 'package:facebook/widgets/postCard.dart';
 import 'package:facebook/widgets/storyCard.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +56,35 @@ class Home extends StatelessWidget {
           children: [
             StatusSection(),
             thinDivider,
-            HeaderButtonSection(),
+            HeaderButtonSection(
+              buttonOne: headerButton(
+                buttonAction: () {
+                  print('Like ..!');
+                },
+                buttonColor: Colors.red,
+                buttonIcon: Icons.video_call,
+                buttonTextColor: Colors.blue,
+                buttonText: "Live",
+              ),
+              buttonTwo: headerButton(
+                buttonAction: () {
+                  print('Take photo!');
+                },
+                buttonColor: Colors.green,
+                buttonTextColor: Colors.blue,
+                buttonIcon: Icons.photo_library,
+                buttonText: "Photo",
+              ),
+              buttonThree: headerButton(
+                buttonAction: () {
+                  print('Create room!');
+                },
+                buttonColor: Colors.purple,
+                buttonTextColor: Colors.blue,
+                buttonIcon: Icons.video_call,
+                buttonText: "Room",
+              ),
+            ),
             thickDivider,
             RoomSection(),
             thickDivider,
@@ -68,7 +97,11 @@ class Home extends StatelessWidget {
               postHeading: "First look",
               postImage: story5,
               showblueTick: true,
+              likeCount: "2K",
+              commentCount: "300",
+              shareCount: "20K",
             ),
+            thickDivider,
           ],
         ),
       ),

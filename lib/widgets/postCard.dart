@@ -1,7 +1,9 @@
 import 'package:facebook/widgets/Avatar.dart';
 import 'package:facebook/widgets/assets.dart';
 import 'package:facebook/widgets/blueTick.dart';
+import 'package:facebook/widgets/headerButton.dart';
 import 'package:flutter/material.dart';
+import 'package:facebook/sections/headerButtonSection.dart';
 
 class PostCard extends StatelessWidget {
   final String postHeading;
@@ -10,6 +12,9 @@ class PostCard extends StatelessWidget {
   final String postTime;
   final String postImage;
   final bool showblueTick;
+  final String likeCount;
+  final String commentCount;
+  final String shareCount;
 
   PostCard({
     required this.avatar,
@@ -18,6 +23,9 @@ class PostCard extends StatelessWidget {
     required this.postHeading,
     required this.postImage,
     this.showblueTick = false,
+    required this.commentCount,
+    required this.likeCount,
+    required this.shareCount,
   });
 
   @override
@@ -29,6 +37,38 @@ class PostCard extends StatelessWidget {
           postTitle(),
           imageSection(),
           footerSection(),
+          Divider(
+            thickness: 1,
+            color: Colors.grey[300],
+          ),
+          HeaderButtonSection(
+            buttonOne: headerButton(
+                buttonAction: () {
+                  print('Like photo!');
+                },
+                buttonColor: Colors.grey,
+                buttonIcon: Icons.thumb_up_alt_outlined,
+                buttonText: "Live",
+                buttonTextColor: Colors.grey),
+            buttonTwo: headerButton(
+              buttonAction: () {
+                print('Send message!');
+              },
+              buttonTextColor: Colors.grey,
+              buttonColor: Colors.grey,
+              buttonIcon: Icons.message_outlined,
+              buttonText: "Message",
+            ),
+            buttonThree: headerButton(
+              buttonAction: () {
+                print('Share this post!');
+              },
+              buttonColor: Colors.grey,
+              buttonTextColor: Colors.grey,
+              buttonIcon: Icons.share_outlined,
+              buttonText: "Share",
+            ),
+          ),
         ],
       ),
     );
@@ -117,26 +157,38 @@ class PostCard extends StatelessWidget {
               SizedBox(
                 width: 3,
               ),
-              displayText(lebel: "20K"),
+              displayText(lebel: likeCount),
             ],
           ),
           Container(
             padding: EdgeInsets.only(right: 20),
             child: Row(
               children: [
-                displayText(lebel: "10K"),
+                displayText(lebel: commentCount),
                 SizedBox(
                   width: 5,
                 ),
                 displayText(lebel: "Comments"),
-                SizedBox(
-                  width: 15,
-                ),
-                displayText(lebel: "12K"),
+                SizedBox(width: 15),
+                displayText(lebel: shareCount),
                 SizedBox(
                   width: 3,
                 ),
-                displayText(lebel: "shares")
+                displayText(lebel: "shares"),
+                Avatar(
+                  displayImage: mohanlal,
+                  displayStatus: false,
+                  height: 25,
+                  width: 25,
+                ),
+                IconButton(
+                    onPressed: () {
+                      print('Drop down list..');
+                    },
+                    icon: Icon(
+                      Icons.arrow_drop_down,
+                      color: Colors.grey[700],
+                    ))
               ],
             ),
           ),

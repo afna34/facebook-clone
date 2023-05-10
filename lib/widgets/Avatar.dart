@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 
 class Avatar extends StatelessWidget {
-  String displayImage;
-  bool displayStatus;
-  bool displayBorder;
+  final String displayImage;
+  final bool displayStatus;
+  final bool displayBorder;
+  final double height;
+  final double width;
 
-  Avatar(
-      {required this.displayImage,
-      required this.displayStatus,
-      this.displayBorder = false});
+  Avatar({
+    required this.displayImage,
+    required this.displayStatus,
+    this.displayBorder = false,
+    this.height = 50,
+    this.width = 50,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +36,8 @@ class Avatar extends StatelessWidget {
             borderRadius: BorderRadius.circular(100),
             child: Image.asset(
               displayImage,
-              width: 50,
-              height: 50,
+              width: width,
+              height: height,
             ),
           ),
         ),
