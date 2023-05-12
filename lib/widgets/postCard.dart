@@ -76,7 +76,7 @@ class PostCard extends StatelessWidget {
 
   Widget postTitle() {
     return Container(
-      padding: EdgeInsets.only(bottom: 5),
+      padding: EdgeInsets.only(bottom: 10, left: 10, right: 10),
       child: Text(
         postHeading == null ? "" : postHeading,
         style: TextStyle(color: Colors.black, fontSize: 16),
@@ -176,7 +176,7 @@ class PostCard extends StatelessWidget {
                 ),
                 displayText(lebel: "shares"),
                 Avatar(
-                  displayImage: mohanlal,
+                  displayImage: avatar,
                   displayStatus: false,
                   height: 25,
                   width: 25,

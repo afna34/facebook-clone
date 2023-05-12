@@ -1,5 +1,6 @@
 import 'package:facebook/sections/headerButtonSection.dart';
 import 'package:facebook/sections/storySection.dart';
+import 'package:facebook/sections/suggestionSection.dart';
 import 'package:facebook/widgets/assets.dart';
 import 'package:facebook/widgets/blueTick.dart';
 import 'package:facebook/widgets/circularButton.dart';
@@ -102,6 +103,55 @@ class Home extends StatelessWidget {
               shareCount: "20K",
             ),
             thickDivider,
+            SuggestionSection(),
+            thickDivider,
+            PostCard(
+              personName: "Actor Dilip",
+              avatar: dilip,
+              postTime: "1 day ago",
+              postHeading: "Happy Diwali",
+              postImage: story2,
+              showblueTick: true,
+              likeCount: "22K",
+              commentCount: "500",
+              shareCount: "33K",
+            ),
+            thickDivider,
+            PostCard(
+              personName: "Shain chacko",
+              avatar: shain,
+              postTime: "1 day ago",
+              postHeading: junctionTitle,
+              postImage: story3,
+              showblueTick: true,
+              likeCount: "22K",
+              commentCount: "500",
+              shareCount: "33K",
+            ),
+            thickDivider,
+            PostCard(
+              personName: "Mammutty",
+              avatar: mammutty,
+              postTime: "1 min ago",
+              postHeading: onw91Title,
+              postImage: story8,
+              showblueTick: true,
+              likeCount: "223K",
+              commentCount: "5K",
+              shareCount: "33K",
+            ),
+            thickDivider,
+            PostCard(
+              personName: "Actor surya",
+              avatar: actor,
+              postTime: "1 min ago",
+              postHeading: chackoTitle,
+              postImage: story4,
+              showblueTick: true,
+              likeCount: "223K",
+              commentCount: "5K",
+              shareCount: "33K",
+            ),
           ],
         ),
       ),
